@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block container %}
+
+<form method="post">
+    <div class="card">
+        <div class="card-header font-weight-bold">{{ title }} Form</div>
+        <div class="card-body">
+            {% csrf_token %}
+            {% for hidden_field in rows.hidden_fields %}
+                {{ hidden_field }}
+            {% endfor %}
+            {% if rows.non_field_errors %}
+            <div class="alert alert-danger" role="alert">
+                {% for error in rows.non_field_errors %}
+                    {{ error }}
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <div class="row">
+                {% for field in rows.visible_fields %}
+                <div class="{{ grid_breakpoint_formcontrol }}">
+                    <div class="form-group">
+                        {% if field.errors %}
+                            {# for error in field.errors #}
+                                <small class="text-danger float-right">{{ field.errors }}</small>
+                            {# endfor #}
+                        {% endif %}
+                        <label for ="{{ field.id_for_label }}" class="label mb-0">{{ field.label_tag }} </label>
+                        {{ field }}
+                        {% if field.help_text %}
+                            <small class="form-text text-muted">{{ field.help_text | safe }}</small>
+                        {% endif %}
+                    </div> <!-- eof form-category -->
+                </div> <!-- eof field_col_width -->
+                {% endfor %}
+            </div> <!-- eof current_record -->
+            {% block submit %}
+            {% if 'Create' in crud.1 %}
+            <button type="submit" class="btn btn-sm btn-success" name="ContinueSave"><i class="fas fa-save"></i> Save & Add Another</button>
+            {% endif %}
+            <button type="submit" class="btn btn-sm btn-primary" name="ExitSave"><i class="far fa-save"></i> Save </button>
+            {% endblock %}
+        </div> <!-- eof card-body -->
+        <div class="card-footer font-weight-light text-right"><span class="float-left">Fill all fields</span>Mode : {{ crud.1 }}</div>
+    </div> <!-- eof card -->
+</form>
+
+{% endblock %}
+{% block activemenu %}
+    $("#{{ context_menu }}").addClass("active");
+{% endblock %}

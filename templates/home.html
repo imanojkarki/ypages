@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block container %}
+<div class="card">
+    <div class="card-header">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <div class="input-group input-group-sm mb-0">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        </div>
+                        <input type="text" id="txtSearch" class="form-control" placeholder="search" />
+                        <select class="form-control form-control-sm" onChange="window.location.replace(this.options[this.selectedIndex].value)">
+                            <option value="/3/0">Show All</option>
+                            {% for category in categories %}
+                            <option value="/3/{{ category.pk }}" {% if category.pk == category_selected_id %} selected{% endif %}>{{ category.category }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fas fa-address-card"></i></span>
+                        </div>
+                    </div>
+                </div>  <!-- eof col2 -->
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                    <div class="btn-group float-right" role="group" aria-label="A2Z">
+                        {# "abcdefghijklmnopqrstuvwxyz" #}
+                        {% for n in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" %}
+                        <a href="{% url 'homepage_filter' 1 forloop.counter %}" class="btn btn-sm {% cycle 'btn-success' 'btn-warning' 'btn_secondary' 'btn-info'  'btn-danger' 'btn-primary' %} border"> {{ n }}</a>
+                        {% endfor %}
+                        <a href="{% url 'homepage_filter' 2 0 %}" class="btn btn-sm border">09</a>
+                    </div>
+                </div> <!-- eof col3 -->
+            </div> <!-- eof of row -->
+        </form>
+    </div> <!-- eof of card-header -->
+    <div class="table-responsive">
+        <table class="table table-bordered table-condensed table-hover table-sm">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Landline</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% if rows %}
+                {% for row in rows %}
+                    <tr>
+                        <td scope="row">{{ forloop.counter }}</td>
+                        <td>{{ row.name }}</td>
+                        <td>{{ row.address }}</td>
+                        <td>{{ row.landline_no }}</td>
+                        <td>{{ row.mobile_no }}</td>
+                        <td>{{ row.email }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td scope="row"></td>
+                    <td colspan="5">No record</td>
+                </tr>
+            {% endif %}
+            </tbody>
+        </table>
+    </div> <!-- eof table-responsive -->
+</div>
+
+<script type="text/javascript">
+    $('#txtSearch').focus();
+
+    $('#txtSearch').keyup(function () {
+        var $rows = $('.table tbody tr');
+        var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+        $rows.show().filter(function () {
+            var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+            return ! ~text.indexOf(val);
+        }).hide();
+    });
+</script>
+{% endblock %}
+{% block activemenu %}
+    $("#mnuHome").addClass("active");
+{% endblock %}

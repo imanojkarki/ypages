@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block apps_menu %}
+<li class="nav-item">
+    <a href="{% url 'teldir:contact_index' 0 0 %}" class="nav-link"><i class="far fa-file"></i> New</a>
+</li>
+{% endblock %}
+
+{% block container %}
+<div class="card">
+    <div class="card-header font-weight-bold text-center">List of {{ title }}s
+        <a href="{% url 'teldir:contact_index' 0 0 %}" title="Create" class="float-left font-weight-normal btn btn-outline-primary btn-sm"><i class="far fa-file"></i> New</a>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-condensed table-hover table-sm">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Landline</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                    <th colspan="2">Recd#</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% if rows %}
+                {% for row in rows %}
+                    <tr>
+                        <td scope="row">{{ forloop.counter }}</td>
+                        <td>{{ row.name }}</td>
+                        <td>{{ row.address }}</td>
+                        <td>{{ row.landline_no }}</td>
+                        <td>{{ row.mobile_no }}</td>
+                        <td>{{ row.email }}</td>
+                        <td scope="row"><a href="{% url 'teldir:contact_index' 2 row.id %}" title="Update"><i class="fas fa-edit"></i></a></td>
+                        <td scope="row"><a href="{% url 'teldir:contact_index' 3 row.id %}" title="Delete"><i class="fas fa-trash"></i></a></td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td scope="row"></td>
+                    <td colspan="7">No record</td>
+                </tr>
+            {% endif %}
+            </tbody>
+        </table>
+    </div> <!-- eof table-responsive -->
+    <div class="card-footer font-weight-light text-right">Mode : {{ crud.1 }}
+        <span class="float-left">Legend : <i class="far fa-file"></i> = New | <i class="fas fa-edit"></i> = Update | <i class="fas fa-trash"></i> = Delete</span>
+    </div>
+</div> <!-- eof card -->
+{% endblock %}
+{% block activemenu %}
+    $("#mnuContact").addClass("active");
+{% endblock %}

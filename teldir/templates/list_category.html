@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block apps_menu %}
+<li class="nav-item">
+    <a href="{% url 'teldir:category_index' 0 0 %}" class="nav-link"><i class="far fa-file"></i> New</a>
+</li>
+{% endblock %}
+
+{% block container %}
+<div class="card">
+    <div class="card-header font-weight-bold text-center">{{ title }} Lists
+        <a href="{% url 'teldir:category_index' 0 0 %}" title="Create" class="float-left font-weight-normal btn btn-outline-primary btn-sm"><i class="far fa-file"></i> New</a>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            {% if rows %}
+                {% for row in rows %}
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-xs-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">{{ forloop.counter }}</span>
+                        </div>
+                        <span class="form-control">{{ row.category }}</span>
+                        <div class="input-group-append">
+                            <a class="input-group-text btn-outline-warning" href="{% url 'teldir:category_index' 2 row.id %}" title="Update"><i class="fas fa-edit"></i></a>
+                            <a class="input-group-text btn-outline-danger" href="{% url 'teldir:category_index' 3 row.id %}" title="Delete"><i class="fas fa-trash"></i></a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" >x</span>
+                        </div>
+                        <span class="form-control">There is no records</span>
+                    </div>
+                </div>
+            {% endif %}
+        </div> <!-- eof row -->
+    </div><!-- eof card-body -->
+    <div class="card-footer font-weight-light text-right">Mode : {{ crud.1 }}
+        <span class="float-left">Legend : <i class="far fa-file"></i> = New | <i class="fas fa-edit"></i> = Update | <i class="fas fa-trash"></i> = Delete</span>
+    </div>
+</div> <!-- eof card -->
+{% endblock %}
+{% block activemenu %}
+    $("#mnuCategory").addClass("active");
+{% endblock %}

@@ -12,9 +12,23 @@ It is a very small project of which was developed myself as part of my learning 
 1. Single Class Based View for Create, Read, Update and Delete Operations
 2. Re-use of deleted record
 
-### Screenshot
+### Screenshots
 
-![alt text](https://github.com/imanojkarki/ypages/blob/master/ypages.JPG "YPages - Home/Main Page Screen")
+### Home/Front Page
+![alt text](https://github.com/imanojkarki/ypages/blob/master/screenshot/ypages.JPG "YPages - Home/Main Page Screen")
+
+### Category List
+![alt text](https://github.com/imanojkarki/ypages/blob/master/screenshot/category_list.JPG "YPages - Screenshot of Category List")
+
+### Category Form
+![alt text](https://github.com/imanojkarki/ypages/blob/master/screenshot/category_form.JPG "YPages - Screenshot of Category Form")
+
+### Contact List
+![alt text](https://github.com/imanojkarki/ypages/blob/master/screenshot/contact_list.JPG "YPages - Screenshot of Contact List")
+
+### Contact Form
+![alt text](https://github.com/imanojkarki/ypages/blob/master/screenshot/contact_form.JPG "YPages - Screenshot of Contact Form")
+
 
 ## Installation 
  

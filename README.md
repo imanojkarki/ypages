@@ -26,15 +26,19 @@ or
 ```pip install virtualenv (Windows)```
  
 Activate the virtualenv (always do this before working on the project),
+
 ```source env/bin/activate```
  
 Install python packages in the local env
+
 ```pip install -r requirements.txt```
 
-Apply Migrations
+Apply migrations
+
 ```python manage.py makemigrations```
 
 Create a database (default is sqlite),
+
 ```python manage.py migrate```
  
 Create a superuser (optional) - this allows you to login at the website as superuser and view the admin page.

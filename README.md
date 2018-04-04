@@ -24,7 +24,8 @@ Activate the virtualenv (always do this before working on the project),
  
 Install python packages in the local env
 ```pip install -r requirements.txt```
- 
+Apply Migrations
+```python manage.py makemigrations```
 Create a database (default is sqlite),
 ```python manage.py migrate```
  

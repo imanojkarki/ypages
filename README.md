@@ -12,6 +12,10 @@ It is a very small project of which was developed myself as part of my learning 
 1. Single Class Based View for Create, Read, Update and Delete Operations
 2. Re-use of deleted record
 
+### Screenshot
+
+![alt text](https://github.com/imanojkarki/ypages/blob/master/ypages.JPG "YPages - Home/Main Page Screen")
+
 ## Installation 
  
 Before following the steps below, make sure you have a recent version of Python (minimum 3.6.4) installed in your computer. 

@@ -1,4 +1,8 @@
+
 # YellowPage (ypages) - A sample web-based Telephone Directory
+
+[![Python Version](https://img.shields.io/badge/python-3.6-brightgreen.svg)](https://python.org)
+[![Django Version](https://img.shields.io/badge/django-2.0-brightgreen.svg)](https://djangoproject.com)
 
 This is a simple telephone directory written with Python/Django framework using Bootstrap (v4), jQuery (v3.2.1), FontAwesome (v5.0.6) and SQLite database.
 

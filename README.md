@@ -12,6 +12,11 @@ It is a very small project of which was developed myself as part of my learning 
 1. Single Class Based View for Create, Read, Update and Delete Operations
 2. Re-use of deleted record
 
+You may want to take a look at this one:
+
+[http://imanojkarki.pythonanywhere.com/](http://imanojkarki.pythonanywhere.com/ "YPage Sample Site") and 
+Userid : testuser and Password : Everest8848
+
 ### Screenshots
 
 ### Home/Front Page
@@ -34,8 +39,9 @@ It is a very small project of which was developed myself as part of my learning 
  
 Before following the steps below, make sure you have a recent version of Python (minimum 3.6.4) installed in your computer. 
 
+Clone this repository:
 ```
-Clone this repository: git clone https://github.com/imanojkarki/ypages.git
+git clone https://github.com/imanojkarki/ypages.git
 CD ypages
 ```
 

@@ -43,7 +43,7 @@ CD ypages
 
 create and start a a virtual environment
 
-```apt-get install virtualenv (Linux) ```
+```sudo apt-get install virtualenv (Linux) ```
 
 or 
 

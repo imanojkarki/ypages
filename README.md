@@ -43,11 +43,11 @@ CD ypages
 
 create and start a a virtual environment
 
-```sudo apt-get install virtualenv (Linux) && virtualenv env ```
+```In Linux> sudo apt-get install virtualenv && virtualenv env ```
 
 or 
 
-```pip install virtualenv (Windows)```
+```In Windows> pip install virtualenv```
  
 Activate the virtualenv (always do this before working on the project),
 
@@ -71,7 +71,7 @@ Create a superuser (optional) - this allows you to login at the website as super
  
 If all went well then ready? Go!
  
-```./manage.py runserver```
+```python ./manage.py runserver```
 
 and then enter URL http://localhost:8000 in your web browser to view the app. 
 

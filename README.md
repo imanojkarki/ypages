@@ -43,19 +43,15 @@ CD ypages
 
 create and start a a virtual environment
 
-```In Linux> sudo apt-get install virtualenv && virtualenv env ```
-
+```Linux$ sudo apt-get install virtualenv && virtualenv env```
+```Linux$ source env/bin/activate```
 or 
+```Windows> python -m venv myspace```
+```Windows> myspace/script/activate``` 
 
-```In Windows> python -m venv myspace```
- 
 Activate the virtualenv (always do this before working on the project),
 
-```Linux$: source env/bin/activate```
-```
-Windows> myspace/script/activate
-```
- 
+
 Install python packages in the local env
 
 ```pip install -r requirements.txt```

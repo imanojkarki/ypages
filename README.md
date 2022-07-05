@@ -47,11 +47,13 @@ create and start a a virtual environment
 
 or 
 
-```In Windows> pip install virtualenv```
+```In Windows> python -m venv myspace```
  
 Activate the virtualenv (always do this before working on the project),
 
-```source env/bin/activate```
+```Linux$: source env/bin/activate
+Windows> myspace/script/activate
+```
  
 Install python packages in the local env
 

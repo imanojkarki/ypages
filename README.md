@@ -43,11 +43,11 @@ CD ypages
 
 create and start a a virtual environment
 
-```Linux$ sudo apt-get install virtualenv && virtualenv env```
-```Linux$ source env/bin/activate```
+```Linux$ sudo apt-get install virtualenv && virtualenv env
+Linux$ source env/bin/activate```
 or 
-```Windows> python -m venv myspace```
-```Windows> myspace/script/activate``` 
+```Windows> python -m venv myspace
+Windows> myspace/script/activate``` 
 
 Activate the virtualenv (always do this before working on the project),
 

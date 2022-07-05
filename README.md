@@ -51,7 +51,8 @@ or
  
 Activate the virtualenv (always do this before working on the project),
 
-```Linux$: source env/bin/activate
+```Linux$: source env/bin/activate```
+```
 Windows> myspace/script/activate
 ```
  
